@@ -219,7 +219,7 @@ Have an amazing birthday and a fantastic year ahead! 🎈✨
 </div>
 
 </div>
-
+<audio id="birthdayMusic" src="birthday.mp3"></audio>
 <script>
 const canvas=document.getElementById("confetti");
 const ctx=canvas.getContext("2d");
@@ -280,16 +280,25 @@ requestAnimationFrame(animate);
 animate();
 
 function celebrate(){
-createConfetti(350);
 
-document.getElementById("wish").style.display="block";
+    // Play birthday music
+    const music = document.getElementById("birthdayMusic");
+    music.play();
 
-document.querySelector("button").innerHTML="🎉 Enjoy Your Day! 🎉";
+    // Massive Confetti Burst
+    createConfetti(350);
 
-document.getElementById("wish").scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
+    // Show Birthday Message
+    document.getElementById("wish").style.display="block";
+
+    // Change Button Text
+    document.querySelector("button").innerHTML="🎉 Enjoy Your Day! 🎉";
+
+    // Smooth Scroll
+    document.getElementById("wish").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 }
 </script>
 
